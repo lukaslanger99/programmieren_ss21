@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.ListView?>
+
+<ListView xmlns:fx="http://javafx.com/fxml/1" 
+		  fx:id="listView"
+		  prefWidth="150">	
+	<items>		
+		<FXCollections fx:factory="observableArrayList">
+			<String fx:value="Spieler 1" />
+			<String fx:value="Spieler 2" />
+			<String fx:value="Spieler 3" />
+			<String fx:value="Spieler 4" />
+			<String fx:value="Spieler 5" />
+		</FXCollections>
+	</items>
+</ListView>
+
+

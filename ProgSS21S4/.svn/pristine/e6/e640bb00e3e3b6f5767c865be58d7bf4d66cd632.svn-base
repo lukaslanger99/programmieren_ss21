@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1">
+	
+	<Button fx:id="feld15" prefWidth="150" prefHeight="100" text="Feld 15" 
+	        GridPane.columnIndex="0" GridPane.rowIndex="0" /> 
+	        	
+	<Button fx:id="feld16" prefWidth="150"  prefHeight="100" text="Feld 16" 
+	        GridPane.columnIndex="1" GridPane.rowIndex="0" />
+	        
+	<Button fx:id="feld1" prefWidth="150"  prefHeight="100" text="Feld 1" 
+	        GridPane.columnIndex="2" GridPane.rowIndex="0"  />
+	        
+	<Button fx:id="feld2" prefWidth="150"  prefHeight="100" text="Feld 2" 
+	        GridPane.columnIndex="3" GridPane.rowIndex="0" />
+	        
+	<Button fx:id="feld3" prefWidth="150"  prefHeight="100" text="Feld 3" 
+	        GridPane.columnIndex="4" GridPane.rowIndex="0" />       
+	
+	<!-- ************************************************** -->
+	
+	<Button fx:id="feld14" prefWidth="150" prefHeight="100" text="Feld 14" 
+	        GridPane.columnIndex="0" GridPane.rowIndex="1" /> 
+	        
+	<Button fx:id="feld4" prefWidth="150" prefHeight="100" text="Feld 4" 
+	        GridPane.columnIndex="4" GridPane.rowIndex="1" /> 
+	
+	<!-- ************************************************** -->
+	
+	<Button fx:id="feld13" prefWidth="150" prefHeight="100" text="Feld 13" 
+	        GridPane.columnIndex="0" GridPane.rowIndex="2" /> 
+	        
+	<Button fx:id="feld5" prefWidth="150" prefHeight="100" text="Feld 5" 
+	        GridPane.columnIndex="4" GridPane.rowIndex="2" /> 
+	
+	<!-- ************************************************** -->
+	
+	<Button fx:id="feld12" prefWidth="150" prefHeight="100" text="Feld 12" 
+	        GridPane.columnIndex="0" GridPane.rowIndex="3" /> 
+	        
+	<Button fx:id="feld6" prefWidth="150" prefHeight="100" text="Feld 6" 
+	        GridPane.columnIndex="4" GridPane.rowIndex="3" /> 
+	
+	<!-- ************************************************** -->
+	
+	<Button fx:id="feld11" prefWidth="150" prefHeight="100" text="Feld 11" 
+	        GridPane.columnIndex="0" GridPane.rowIndex="4" /> 
+	        	
+	<Button fx:id="feld10" prefWidth="150"  prefHeight="100" text="Feld 10" 
+	        GridPane.columnIndex="1" GridPane.rowIndex="4" />
+	        
+	<Button fx:id="feld9" prefWidth="150"  prefHeight="100" text="Feld 9" 
+	        GridPane.columnIndex="2" GridPane.rowIndex="4" />
+	        
+	<Button fx:id="feld8" prefWidth="150"  prefHeight="100" text="Feld 8" 
+	        GridPane.columnIndex="3" GridPane.rowIndex="4" />
+	        
+	<Button fx:id="feld7" prefWidth="150"  prefHeight="100" text="Feld 7" 
+	        GridPane.columnIndex="4" GridPane.rowIndex="4" />
+
+</GridPane>
+

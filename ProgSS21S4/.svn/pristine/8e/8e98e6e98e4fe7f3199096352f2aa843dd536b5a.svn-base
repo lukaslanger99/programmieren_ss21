@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1" minHeight="150" alignment="CENTER" hgap="20">
+	
+	<Button fx:id="wuerfeln" prefWidth="120" prefHeight="50" 
+			text="Würfeln" defaultButton="true"
+	        GridPane.columnIndex="0" GridPane.rowIndex="0" /> 
+	        	
+	<Button fx:id="etappenwette" prefWidth="120"  prefHeight="50" 
+			text="Etappenwette" defaultButton="true"
+	        GridPane.columnIndex="1" GridPane.rowIndex="0" />
+	        
+	<Button fx:id="spielwette" prefWidth="120"  prefHeight="50" 
+			text="Spielwette" defaultButton="true"
+	        GridPane.columnIndex="2" GridPane.rowIndex="0"  />
+	        
+	<Button fx:id="wuestenplaettchen" prefWidth="120"  prefHeight="50" 
+			text="Wüstenplättchen" defaultButton="true" 
+	        GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+</GridPane>
+

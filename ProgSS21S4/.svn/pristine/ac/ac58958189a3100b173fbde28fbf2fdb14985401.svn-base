@@ -1,0 +1,57 @@
+package de.ostfalia.prog.s21ss.s4.model.controller;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+
+/**
+ * @author M.Gruendel
+ *
+ */
+public class BottomController {
+	
+	@FXML
+	Button wuerfeln;
+	
+	@FXML
+	Button etappenwette;
+	
+	@FXML
+	Button spielwette;
+	
+	@FXML
+	Button wuestenplaettchen;
+	
+	@FXML
+    protected void mouseAction(ActionEvent event) {		
+		Button buttom = (Button) event.getSource();		
+        System.out.println("The button " + buttom.getId() + " was clicked!");
+    }
+
+	public void setSomething(String attr) {
+		System.out.println("BottomController: " + attr);
+	}
+	
+	@Override
+	public String toString() {
+		return "BottomController [wuerfeln=" + wuerfeln + ", etappenwette="
+				+ etappenwette + ", spielwette=" + spielwette
+				+ ", wuestenplaettchen=" + wuestenplaettchen + "]";
+	}
+
+	public void wuerfelnClicked() {
+		System.out.println();
+	}
+
+	public void etappenwetteClicked() {
+		System.out.println(wuerfeln);
+	}
+
+	public void spielwetteClicked() {
+		System.out.println();
+	}
+
+	public void wuestenplaettchenClicked() {
+		System.out.println("Test");
+	}
+}

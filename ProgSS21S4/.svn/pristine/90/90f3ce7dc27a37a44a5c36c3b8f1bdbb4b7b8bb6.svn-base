@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.*?>
+
+<GridPane alignment="CENTER" hgap="20" minHeight="150" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="de.ostfalia.prog.s21ss.s4.model.controller.BottomController">
+   <children>
+   	
+   	<Button fx:id="wuerfeln" defaultButton="true" onAction="#wuerfelnClicked" prefHeight="50" prefWidth="120" text="Würfeln" GridPane.columnIndex="0" GridPane.rowIndex="0" /> 
+   	        	
+   	<Button fx:id="etappenwette" defaultButton="true" onAction="#etappenwetteClicked" prefHeight="50" prefWidth="120" text="Etappenwette" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+   	        
+   	<Button fx:id="spielwette" defaultButton="true" onAction="#spielwetteClicked" prefHeight="50" prefWidth="120" text="Spielwette" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+   	        
+   	<Button fx:id="wuestenplaettchen" defaultButton="true" onAction="#wuestenplaettchenClicked" prefHeight="50" prefWidth="120" text="Wüstenplättchen" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+   </children>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+
+</GridPane>

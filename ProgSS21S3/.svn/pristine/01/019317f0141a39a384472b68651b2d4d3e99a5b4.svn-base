@@ -1,0 +1,56 @@
+package de.ostfalia.prog.s21ss.s3.model.wettgeschaeft;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import de.ostfalia.prog.s21ss.s3.model.CamelUp;
+
+public class Wettgeschaeft {
+	private List<Wette> etappenWetten = new ArrayList<Wette>();
+	private List<Wette> olleWetten = new ArrayList<Wette>();
+	private List<Wette> tolleWetten = new ArrayList<Wette>();
+
+	public Wettgeschaeft() {
+
+	}
+
+	public void addWette(Wette wette) {
+		if (wette.getTyp() == Wettentyp.ETAPPE) {
+			etappenWetten.add(wette);
+		} else if (wette.getTyp() == Wettentyp.OLL) {
+			olleWetten.add(wette);
+		} else if (wette.getTyp() == Wettentyp.TOLL) {
+			tolleWetten.add(wette);
+		}
+	}
+
+	public void etappenWettenAbarbeiten(CamelUp camelUp) {
+		for (Wette wette : etappenWetten) {
+			if (wette.getFarbe() == camelUp.fuehrendesKamel()) {
+				// erster -> wert der karte
+				camelUp.getChars().get(wette.getCharakter()).addGuthaben(wette.getWert());
+			} else if (wette.getFarbe() == camelUp.zweitplatziertesKamel()) {
+				// zweiter -> 1 äp
+				camelUp.getChars().get(wette.getCharakter()).addGuthaben(1);
+			} else {
+				// falsches kamel -> -1 äp
+				camelUp.getChars().get(wette.getCharakter()).addGuthaben(-1);
+			}
+		}
+		etappenWetten.clear();
+	}
+
+	public void olleWettenAbarbeiten(CamelUp camelUp) {
+		for (Wette wette : olleWetten) {
+
+		}
+		olleWetten.clear();
+	}
+
+	public void tolleWettenAbarbeiten(CamelUp camelUp) {
+		for (Wette wette : tolleWetten) {
+
+		}
+		tolleWetten.clear();
+	}
+}

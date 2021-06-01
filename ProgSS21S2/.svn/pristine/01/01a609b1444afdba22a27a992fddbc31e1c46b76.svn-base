@@ -1,0 +1,12 @@
+package de.ostfalia.prog.s21ss.s2.model.exceptions;
+
+public class UngueltigerZugException extends Exception {
+
+	public UngueltigerZugException() {
+
+	}
+
+	public UngueltigerZugException(String string) {
+
+	}
+}
