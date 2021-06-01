@@ -1,0 +1,211 @@
+package de.ostfalia.prog.s21ss.s4.model;
+
+import de.ostfalia.prog.s21ss.s4.base.Charakter;
+import de.ostfalia.prog.s21ss.s4.base.Farbe;
+import de.ostfalia.prog.s21ss.s4.model.exceptions.UngueltigerZugException;
+import de.ostfalia.prog.s21ss.s4.model.felder.Plaettchen;
+import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+/* this class represents the main application.
+ * this application represents a game in which a player can produce cookies
+ * with the help of the clicker and some buildings.
+ * the clicker produces cookies by a button click.
+ * the buildings produce cookies automatically from time to time
+ */
+public class MainFX extends Application {
+	Charakter[] chars = { Charakter.ABENTEURER, Charakter.DAME, Charakter.GENTLEMAN, Charakter.HAENDLER,
+			Charakter.LADY };
+	private CamelUp camelUp;
+
+	private FlowPane root;
+
+	private Label spielfeld;
+
+	private ListView<String> charList;
+	private ListView<String> farbenList;
+
+	private TextField value;
+	private Button legeOase;
+	private Button legeFatamorgana;
+	private Button etappenWette;
+	private Button olleWette;
+	private Button tolleWette;
+	private Button etappeSpielenButton;
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+
+
+
+	public MainFX() {
+		Pyramide.getInstance().initialisiereRandom();
+		camelUp = new CamelUp(chars);
+		camelUp.startPosition();
+		System.out.println("created");
+	}
+
+	// tasks of this method: initialize all graphical elements and add
+	// functionality to the interactive elements (that are only buttons here)
+	@Override
+	public void start(Stage stage) {
+		root = new FlowPane();
+		
+		VBox mainArea = new VBox();
+		mainArea.setSpacing(5);
+		HBox spielfeldUndListen = new HBox();
+		HBox plaettchen = new HBox();
+		HBox wetten = new HBox();
+		plaettchen.setSpacing(5);
+		wetten.setSpacing(5);
+
+		ObservableList<String> names = FXCollections.observableArrayList(
+		          "ABENTEURER", "DAME", "GENTLEMAN", "HAENDLER", "LADY");
+		charList = new ListView<String>();
+		charList.setItems(names);
+
+		names = FXCollections.observableArrayList("BLAU", "GELB", "GRUEN", "WEISS", "ORANGE");
+		farbenList = new ListView<String>();
+		farbenList.setItems(names);
+
+		spielfeld = new Label(camelUp.toString());
+		
+		value = new TextField();
+
+		legeOase = new Button("Lege Oase");
+		legeOase.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				int fieldNumber = Integer.parseInt(value.getText());
+				Charakter charakter = Charakter.valueOf(charList.getSelectionModel().getSelectedItem());
+
+				if (charakter != null && fieldNumber > 0) {
+					try {
+						camelUp.legeWuestenplaettchen(charakter, fieldNumber, Plaettchen.OASE);
+						spielfeld.setText(camelUp.toString());
+						value.setText("");
+					} catch (UngueltigerZugException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+
+		});
+
+		legeFatamorgana = new Button("Lege Fatamorgana");
+		legeFatamorgana.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				int fieldNumber = Integer.parseInt(value.getText());
+				Charakter charakter = Charakter.valueOf(charList.getSelectionModel().getSelectedItem());
+
+				if (charakter != null && fieldNumber > 0) {
+					try {
+						camelUp.legeWuestenplaettchen(charakter, fieldNumber, Plaettchen.FATAMORGANA);
+						spielfeld.setText(camelUp.toString());
+						value.setText("");
+					} catch (UngueltigerZugException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+
+		});
+
+		etappenWette = new Button("Etappenwette");
+		etappenWette.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				Charakter charakter = Charakter.valueOf(charList.getSelectionModel().getSelectedItem());
+				Farbe farbe = Farbe.valueOf(farbenList.getSelectionModel().getSelectedItem());
+
+				if (charakter != null && farbe != null) {
+					camelUp.etappenWette(charakter, farbe);
+					System.out.println("Etappenwette: " + charakter + "-" + farbe);
+				}
+			}
+
+		});
+
+		olleWette = new Button("Olle-wette");
+		olleWette.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				Charakter charakter = Charakter.valueOf(charList.getSelectionModel().getSelectedItem());
+				Farbe farbe = Farbe.valueOf(farbenList.getSelectionModel().getSelectedItem());
+
+				if (charakter != null && farbe != null) {
+					camelUp.etappenWette(charakter, farbe);
+					System.out.println("Etappenwette: " + charakter + "-" + farbe);
+				}
+			}
+
+		});
+
+		tolleWette = new Button("Tolle-wette");
+		tolleWette.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				Charakter charakter = Charakter.valueOf(charList.getSelectionModel().getSelectedItem());
+				Farbe farbe = Farbe.valueOf(farbenList.getSelectionModel().getSelectedItem());
+
+				if (charakter != null && farbe != null) {
+					camelUp.etappenWette(charakter, farbe);
+					System.out.println("Etappenwette: " + charakter + "-" + farbe);
+				}
+			}
+
+		});
+
+		etappeSpielenButton = new Button("Etappe spielen");
+		etappeSpielenButton.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				Pyramide.getInstance().initialisiereRandom();
+				int wuerfelLeftAnzahl = Pyramide.anzahlWuerfel();
+				for (int i = 0; i < wuerfelLeftAnzahl; i++) {
+					camelUp.bewegeKamel(chars[i]);
+				}
+				spielfeld.setText(camelUp.toString());
+
+				if (camelUp.getGameFinished()) {
+					charList.setVisible(false);
+					farbenList.setVisible(false);
+					plaettchen.setVisible(false);
+					wetten.setVisible(false);
+					etappeSpielenButton.setVisible(false);
+				}
+			}
+
+		});
+
+		spielfeldUndListen.getChildren().addAll(spielfeld, charList, farbenList);
+		plaettchen.getChildren().addAll(value, legeOase, legeFatamorgana);
+		wetten.getChildren().addAll(etappenWette, olleWette, tolleWette);
+		mainArea.getChildren().addAll(spielfeldUndListen, plaettchen, wetten, etappeSpielenButton);
+		root.getChildren().addAll(mainArea);
+
+		stage.setTitle("CamelUp");
+		stage.setScene(new Scene(root, 700, 500));
+		stage.show();
+	}
+}

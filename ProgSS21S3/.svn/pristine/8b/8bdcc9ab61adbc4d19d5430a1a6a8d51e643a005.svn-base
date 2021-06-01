@@ -1,0 +1,25 @@
+package de.ostfalia.prog.s21ss.s3.model.wettgeschaeft;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import de.ostfalia.prog.s21ss.s3.model.CamelUp;
+
+public class Wettgeschaeft {
+	private List<Wette> wetten = new ArrayList<Wette>();
+
+	public Wettgeschaeft() {
+
+	}
+
+	public void addWette(Wette wette) {
+		wetten.add(wette);
+	}
+
+	public void wettenAbarbeiten(CamelUp camelUp) {
+		for (Wette wette : wetten) {
+
+		}
+		wetten.clear();
+	}
+}

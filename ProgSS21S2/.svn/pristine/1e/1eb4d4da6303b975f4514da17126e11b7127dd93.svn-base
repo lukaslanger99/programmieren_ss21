@@ -1,0 +1,5 @@
+package de.ostfalia.prog.s21ss.s2.model.exceptions;
+
+public class UngueltigerZugException {
+
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.ListView?>
+
+<ListView xmlns:fx="http://javafx.com/fxml/1" 
+		  fx:id="listView"
+		  prefWidth="150">	
+	<items>
+		<FXCollections fx:factory="observableArrayList">
+			<String fx:value="LADY" />
+			<String fx:value="PRINZESSIN" />
+			<String fx:value="MAEDCHEN" />
+			<String fx:value="DAME" />
+			<String fx:value="SCHEICH" />
+			<String fx:value="HAENDLER" />
+			<String fx:value="GENTLEMAN" />
+			<String fx:value="ABENTEURER" />
+		</FXCollections>
+	</items>
+</ListView>
+
+
